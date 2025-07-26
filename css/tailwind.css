@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #000000; /* black - sophisticated foundation */
+  --color-secondary: #1a1a1a; /* gray-900 - subtle depth variation */
+  --color-accent: #d4af37; /* yellow-600 - premium moments */
+  
+  /* Background Colors */
+  --color-background: #ffffff; /* white - clean canvas */
+  --color-surface: #f8f8f8; /* gray-50 - gentle content separation */
+  
+  /* Text Colors */
+  --color-text-primary: #000000; /* black - maximum readability */
+  --color-text-secondary: #666666; /* gray-500 - supporting information */
+  
+  /* Status Colors */
+  --color-success: #2d5a27; /* green-800 - positive confirmation */
+  --color-warning: #8b6914; /* yellow-700 - gentle attention */
+  --color-error: #8b2635; /* red-800 - helpful correction */
+  
+  /* Border Colors */
+  --color-border: #e5e5e5; /* gray-200 - minimal separation */
+  
+  /* Shadow Values */
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-text-primary;
+    font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 ease-out hover:shadow-subtle;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-primary px-6 py-3 rounded-lg font-semibold transition-all duration-300 ease-out hover:shadow-subtle;
+  }
+  
+  .card {
+    @apply bg-surface border border-border rounded-lg p-6 transition-all duration-300 ease-out;
+  }
+  
+  .input-field {
+    @apply border border-border rounded-lg px-4 py-3 bg-background focus:outline-none focus:border-accent transition-all duration-300 ease-out;
+  }
+  
+  .portfolio-image {
+    @apply transition-all duration-300 ease-out hover:shadow-subtle;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-fade-in {
+    animation: fadeIn 300ms ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
